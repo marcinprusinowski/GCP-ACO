@@ -1,5 +1,4 @@
 from graph.Graph import Graph
-import math
 
 
 class GraphUtils:
@@ -9,11 +8,7 @@ class GraphUtils:
         return graph.matrix[v1][v2] == 1 and graph.matrix[v2][v1] == 1
 
     @staticmethod
-    def add_edge(graph: Graph, v1, v2, cycle=False):
-        if cycle and v1 == v2:
-            graph.matrix[v1][v2] = 1
-            return graph
-
+    def add_edge(graph: Graph, v1, v2):
         graph.matrix[v1][v2] = 1
         graph.matrix[v2][v1] = 1
         return graph
